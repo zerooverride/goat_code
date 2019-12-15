@@ -1,0 +1,29 @@
+<html>
+<body>
+
+  <h1 id='myText'>text1</h1>
+
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      async function changes(){
+        while(true){
+          await changeText('AAAAA');
+          await changeText('BBBBB3');
+          await changeText('');
+        }
+      }
+      async function changeText(text){
+        await sleep(500);
+        document.getElementById("myText").innerHTML = text;
+        await sleep(500);
+      }
+
+      changes();
+    </script>
+
+
+
+</body>
+</html>
